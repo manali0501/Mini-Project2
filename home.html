@@ -1,137 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Siddhivinayak Engineers</title>
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About Us</a></li>
-        </ul>
-      </nav>
-      <button class="call-us">Call Us</button>
-    </header>
-    <main>
-      <section class="welcome-section">
-        <div class="welcome-text">
-          <h1>
-            Welcome to<br />
-            <span style="color: #000">Siddhivinayak <br />Engineers</span>
-          </h1>
-          <p>One Stop Solution for All your Electric & Automation Needs.</p>
-          <button type="submit" class="call-us-btn2">Go to Projects</button>
-          <button type="submit" class="call-us-btn">Contact Us</button>
-        </div>
-        <div class="robot-img">
-          <img src="images/robot.png" alt="robot" />
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddhivinayak Engineers</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-area"></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+    <button class="call-us">Call Us</button>
+  </header>
+  <main>
+    <section class="welcome-section">
+      <div class="video-background">
+        <video autoplay muted loop id="background-video">
+          <source src="videos/bg-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="welcome-text">
+        <h1>
+          Welcome to<br />
+          <span>Siddhivinayak Engineers</span>
+        </h1>
+        <p>One Stop Solution for All your Electric & Automation Needs.</p>
+        <button type="submit" class="call-us-btn2">Go to Projects</button>
+        <button type="submit" class="call-us-btn">Contact Us</button>
+      </div>
+    </section>
 
-      <div class="container">
-        <div class="top-text">
-            <h2 class="heading">How we Add value to our Products</h2>
-        </div>
-        <div class="gallery">
-          <div class="box row-2 col-3" style="background-image: url('grid/motherboard.jpg');">Hardware</div>
-            <div class="box row-2 col-3" style="background-image: url('grid/maintain.jpg');">Corrective & Preventive Maintenance</div>
-            <div class="box row-2 col-3 " style="background-image: url('grid/right.jpg');">Selection Of Right Products</div>
-            <div class="box row-4 col-2" style="background-image: url('grid/integration.jpg');">Instrumentation & System Integration</div>
-            <div class="box col-2 row-2" style="background-image: url('grid/mnitor.png');">Engineering Monitoring Systems</div>
-            <div class="box row-2 col-3" style="background-image: url('grid/projects.jpg');">Engineering Projects</div>
-            <div class="box row-4 col-2" style="background-image: url('grid/sensors.jpg');">Safety Sensor Solutions</div>
-            <div class="box row-2 col-4" style="background-image: url('grid/plc.jpg');">Custom Programming for PLC, HMI, SCADA, VFD, Servo</div>
-        </div>
+    <div class="container">
+      <div class="top-text">
+        <h2 class="heading">How we Add Value to our Products</h2>
+      </div>
+      <div class="gallery">
+        <div class="box row-2 col-3" style="background-image: url('grid/motherboard.jpg');">Hardware</div>
+        <div class="box row-2 col-3" style="background-image: url('grid/maintain.jpg');">Corrective & Preventive Maintenance</div>
+        <div class="box row-2 col-3" style="background-image: url('grid/right.jpg');">Selection Of Right Products</div>
+        <div class="box row-4 col-2" style="background-image: url('grid/integration.jpg');">Instrumentation & System Integration</div>
+        <div class="box col-2 row-2" style="background-image: url('grid/mnitor.png');">Engineering Monitoring Systems</div>
+        <div class="box row-2 col-3" style="background-image: url('grid/projects.jpg');">Engineering Projects</div>
+        <div class="box row-4 col-2" style="background-image: url('grid/sensors.jpg');">Safety Sensor Solutions</div>
+        <div class="box row-2 col-5" style="background-image: url('grid/plc.jpg');">Custom Programming for PLC, HMI, SCADA, VFD, Servo</div>
+      </div>
     </div>
-        <div class="arrows">
-          <span>&raquo;</span>
-          <span>&raquo;</span>
-          <span>&raquo;</span>
-        </div>
+
+    <section class="clients">
+      <h2>Our Clients</h2>
+      <div class="client-logos">
+        <img src="images/alpha.png" alt="alpha" />
+        <img src="images/mahabal.png" alt="mahabal" />
+        <img src="images/menon.png" alt="menon" />
+        <img src="images/pidlite.png" alt="pidlite" />
+        <img src="images/suyash.png" alt="suyash" />
+        <img src="images/riba.png" alt="riba" />
       </div>
-      <div class="industries-container">
-        <h2>Industries We Serve</h2>
-        <div class="industries-grid">
-          <div class="industry-item">
-            <i class="icon-automobile"></i>
-            <p>Automobile</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-metal"></i>
-            <p>Metal Industry</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-wire"></i>
-            <p>Wire Industry</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-coldstorage"></i>
-            <p>Cold Storage</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-animalfeed"></i>
-            <p>Animal Feed</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-food"></i>
-            <p>Food Industries</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-water"></i>
-            <p>Water Treatment & Distribution</p>
-          </div>
-          <div class="industry-item">
-            <i class="icon-environment"></i>
-            <p>Environmental</p>
-          </div>
-          <div class="industry-item">
-            <!--<i class="icon-pipe"></i>-->
-            <img src="images/pipe.png" alt="" />
-            <p>Plastic Pipe Industry</p>
-          </div>
-        </div>
-      </div>
-
-      <!--<div class="card">
-        <div class="image"></div>
-        <div class="content">
-          <a href="#">
-            <span class="title">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </span>
-          </a>
-
-          <p class="desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-          </p>
-
-          <a class="action" href="#">
-            Find out more
-            <span aria-hidden="true"> → </span>
-          </a>
-        </div>
-      </div>-->
-
-      <section class="clients">
-        <h2>Our Clients</h2>
-        <div class="client-logos">
-          <img src="images/alpha.png" alt="alpha" />
-          <img src="images/mahabal.png" alt="mahabal" />
-          <img src="images/menon.png" alt="menon" />
-          <img src="images/pidlite.png" alt="pidlite" />
-          <img src="images/suyash.png" alt="suyash" />
-          <img src="images/riba.png" alt="riba" />
-          <!-- Add more logos as needed -->
-        </div>
-      </section>
-    </main>
-  </body>
+    </section>
+  </main>
+</body>
 </html>
