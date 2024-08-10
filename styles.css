@@ -1,0 +1,107 @@
+body {
+    background-color: #121825;
+    color: #fff;
+    font-family: 'Outfit', sans-serif; /* Font updated to Outfit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Allow content to extend beyond viewport */
+    overflow-x: hidden; 
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px; /* Increased spacing between items */
+    max-width: 1200px; /* Increased the max-width to spread out the grid */
+    width: 100%;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item img {
+    width: 100px; /* Increased image size */
+    height: 100px;
+    margin-bottom: 15px; /* Adjusted margin for better spacing */
+  }
+  
+  .item p {
+    font-size: 24px; /* Increased text size for items */
+    margin: 0; /* Remove default margin */
+  }
+  
+  h1 {
+    position: relative; /* Position relative to handle pseudo-element */
+    margin: 60px 0 20px; /* Increased top margin to push heading down */
+    font-size: 36px; /* Adjusted font size */
+    font-weight: 200; /* Set font weight to 200 */
+  }
+  
+  h1::before {
+    content: ''; /* Empty content to create the bar */
+    position: absolute;
+    top: -30px; /* Position the bar above the heading */
+    left: 0;
+    width: 100%;
+    height: 30px; /* Height of the white bar */
+    background-color: #fff; /* White color for the bar */
+  }
+  
+  .arrow {
+    position: fixed; /* Fix the position relative to the viewport */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right side of the viewport */
+    width: 60px; /* Adjusted size of the arrow image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .page-white {
+    background-color: #fff; /* White background for client logos section */
+    color: #121825; /* Dark text color for contrast */
+    height: 45vh; /* Height less than half of viewport height */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .client-logos {
+    width: 100%;
+    overflow: hidden; /* Hide horizontal overflow */
+  }
+  
+  .logos-container {
+    display: flex; /* Flexbox for horizontal layout */
+    white-space: nowrap; /* Prevent wrapping of child elements */
+    animation: scroll-left 20s linear infinite; /* Continuous horizontal scroll animation */
+  }
+  
+  .logos-container img {
+    height: 160px; /* Adjust logo size */
+    margin-right: 20px; /* Spacing between logos */
+    vertical-align: middle; /* Align logos vertically in case of different heights */
+  }
+  
+  /* Animation for continuous horizontal scroll */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%); /* Start position off-screen to the right */
+    }
+    100% {
+      transform: translateX(-100%); /* End position off-screen to the left */
+    }
+  }
+
+  
+  

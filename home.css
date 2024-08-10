@@ -1,76 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&display=swap');
-
-body {
-  font-family: 'Outfit', serif;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif; /* Font updated to Outfit */
+  margin: 0;
+  padding: 0;
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 header {
-  /*background-color: #f0f1f7;*/
-  display: flex; /* Use flexbox to align items */
-  justify-content: space-between; /* Space between nav and button */
-  align-items: center; /* Vertically center items */
-  padding: 9px 20px; /* Added padding to allow space for the button offset */
-  background-color: #fff;
-  margin-top: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 9px 20px;
+  background-color: transparent; /* Ensure header is transparent for video visibility */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2; /* Ensure header is above video */
 }
 
 nav {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 700px;
-  top: 10px;
+  max-width: 60vw;
   margin: 0 auto;
-  padding: 10px 30px; /* Add padding to create a button-like shape */
-  border-radius: 30px; /* Increase border-radius for a more rounded button shape */
-  background-color: #c4c8d4; /* Change background color to make it stand out */
-  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  Add shadow for a raised effect */
-  /*opacity: 0;Start hidden 
-  animation: fadeIn 1s ease-out forwards; Fade-in animation 
-  animation-delay: 0.5s; Optional: Delay the animation slightly */
-  transform: scale(0.5); /* Start at a smaller size */
-  opacity: 0; /* Start invisible */
-  animation: scaleUp 1s ease-out forwards; /* Scale-up animation */
-  animation-delay: 0.5s; /* Optional: Delay the animation slightly */
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #c4c8d4;
+  opacity: 1;
+  animation-delay: 0.5s;
 }
 
-/*@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);  Optional: Adds a slight slide-in effect 
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}*/
-
-@keyframes scaleUp {
-  from {
-    transform: scale(0.5); /* Start at 50% of the original size */
-    opacity: 0; /* Start fully transparent */
-  }
-  to {
-    transform: scale(1); /* End at full size */
-    opacity: 1; /* End fully opaque */
-  }
-}
 
 nav ul {
   list-style-type: none;
   display: flex;
   gap: 20px;
   padding: 0;
-  margin: 0;
-}
-
-nav ul li {
   margin: 0;
 }
 
@@ -82,10 +54,15 @@ nav ul li a {
   padding: 10px 20px;
   transition: background-color 0.3s, color 0.3s;
 }
+
+
 nav ul li a:hover {
   background-color: #fb845d;
   color: #fff;
 }
+
+/* ---------------------Call us button----------------------- */
+
 .call-us {
   background-color: #fb845d;
   color: #fff;
@@ -99,8 +76,9 @@ nav ul li a:hover {
 }
 
 .call-us:hover {
-  background-color: #e0240bdc;
+  background-color: #e0240b;
 }
+
 .call-us-btn {
   background-color: #f95c3c;
   color: #fff;
@@ -110,9 +88,11 @@ nav ul li a:hover {
   width: 120px;
   cursor: pointer;
 }
+
 .call-us-btn:hover {
-  background-color: #e0240bdc;
+  background-color: #e0240b;
 }
+
 .call-us-btn2 {
   background-color: #3575aa;
   color: #fff;
@@ -122,42 +102,91 @@ nav ul li a:hover {
   width: 150px;
   cursor: pointer;
 }
+
 .call-us-btn2:hover {
   background-color: #95a1bb;
 }
+
+/* Ensure the video covers the entire section */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
+video#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure the video covers the area without distortion */
+}
+
+/* Ensure the content of welcome-section is properly displayed on top of the video */
 .welcome-section {
+  position: relative; /* Set positioning context for the video */
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh; /* Ensure it covers the full viewport height */
+  justify-content: center;
   align-items: center;
-  max-width: 1200px;
-  margin: 40px auto;
+  text-align: center;
+  color: white; /* Adjust text color if needed */
   padding: 20px;
-  /*background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);*/
 }
 
 .welcome-text h1 {
   font-size: 3.5em;
-  color: #686467;
-  line-height: 1.2; /* Adjust this value for the desired gap between lines */
-  margin-bottom: 50px; /* Adjust this value for the desired gap below the h1 */
+  color: #fff; /* Ensure the text color contrasts with the video background */
+  line-height: 1.2;
+  margin-bottom: 50px;
 }
 
 .welcome-text p {
   font-size: 1.2em;
-  color: #666;
+  color: #fff; /* Ensure the text color contrasts with the video background */
 }
-.robot-img img {
-  width: 400px;
-  height: auto;
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .welcome-text h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .welcome-text p {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .robot-img img {
+    width: 300px;
+    margin-top: 20px;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-button {
-  margin-left: 10px;
+
+@media screen and (max-width: 480px) {
+  .welcome-text h1 {
+    font-size: 2em;
+  }
+
+  .robot-img img {
+    width: 100%;
+    max-width: 250px;
+  }
 }
+
 .clients {
   text-align: center;
   padding: 40px 20px;
+  padding-top: 12%; /* Add padding to the top */
 }
 
 .clients h2 {
@@ -174,395 +203,17 @@ button {
 }
 
 .client-logos img {
-  max-height: 200px; /* Adjust based on your design */
-  max-width: 200px; /* Adjust based on your design */
-}
-
-.value-container {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 28px;
-}
-
-.value-container h2 {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.value-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 15px;
-  font-size: 16px;
-  color: #fff;
-  position: relative;
-}
-
-.value-item::after {
-  content: "\2192"; /* Right arrow */
-  font-size: 20px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-.hardware {
-  background-color: #ffffff;
-  color: #333;
-  border: 2px solid #333;
-  cursor: pointer;
-}
-
-.selection {
-  background-color: #f7931e;
-  cursor: pointer;
-}
-
-.corrective {
-  background-color: #f15a24;
-  cursor: pointer;
-}
-
-.instrumentation {
-  background-color: #f7931e;
-  grid-column: span 2;
-  cursor: pointer;
-}
-
-.energy {
-  background-color: #ed1e79;
-  cursor: pointer;
-}
-
-.environmental {
-  background-color: #f15a24;
-  cursor: pointer;
-}
-
-.programming {
-  background-color: #f7931e;
-  grid-column: span 2;
-  cursor: pointer;
-}
-
-.engineering {
-  background-color: #ffffff;
-  color: #333;
-  border: 2px solid #333;
-  cursor: pointer;
-  grid-column: span 3; /* Ensures it aligns with the grid */
-  grid-row: 3;
-}
-
-.arrows {
-  margin-top: 20px;
-  font-size: 30px;
-  color: #f7931e;
-}
-
-.arrows span {
-  margin: 0 5px;
-}
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .welcome-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .clients h2,
-  .services h2 {
-    font-size: 2.5em;
-  }
-
-  .client-logos {
-    gap: 20px;
-  }
-
-  .client-logos img {
-    max-height: 100px;
-    max-width: 100px;
-  }
-
-  .services-container {
-    gap: 10px;
-  }
-
-  .service-item {
-    font-size: 0.9em;
-    padding: 8px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 9px 10px;
-  }
-
-  .welcome-text h1 {
-    font-size: 2.5em;
-  }
-
-  .services h2 {
-    font-size: 2em;
-  }
-
-  .service-item {
-    font-size: 0.8em;
-    padding: 5px 10px;
-  }
-}
-
-.industries-container {
-  text-align: center;
-}
-
-.industries-container h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.industries-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  background-color: #121825;
-}
-
-.industry-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-.industry-item p {
-  color: #fff;
-}
-.industry-item:hover {
-  transform: translateY(-10px);
-  cursor: pointer;
-  background-color: #3575aa;
-}
-.industries-container h2 {
-  font-size: 3em;
-}
-.industry-item i {
-  font-size: 40px;
-  margin-bottom: 10px;
-  padding: 20px;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.industry-item p {
-  font-size: 16px;
-  margin: 0;
-}
-
-.icon-automobile::before {
-  content: "\1F697";
-}
-
-.icon-metal::before {
-  content: "\26CF";
-  color: #fff;
-}
-
-.icon-wire::before {
-  content: "\1F4BB";
-}
-
-.icon-coldstorage::before {
-  content: "\1F3E0";
-}
-
-.icon-animalfeed::before {
-  content: "\1F42E";
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.icon-food::before {
-  content: "\1F33F";
-}
-
-.icon-water::before {
-  content: "\1F4A7";
-}
-
-.icon-environment::before {
-  content: "\1F331";
-}
-
-.icon-pipe::before {
-  content: "\1F6BD";
-}
-.services-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background-color: #c2e0f5;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  flex: 1; /* Ensures equal width for both cards */
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  background-color: #3970e7;
-  cursor: pointer;
-}
-
-.service-card img {
-  width: 100%;
-  height: 200px;
-  display: block;
-}
-
-.service-content {
-  padding: 20px;
-  text-align: left;
-}
-
-.service-content h3 {
-  font-size: 1.5em;
-  color: #333;
-  margin-bottom: 10px;
-}
-.service-content p:hover {
-  color: #fff;
-}
-.service-content p {
-  font-size: 1em;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.read-more {
-  font-size: 1em;
-  color: #e0240bdc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.read-more:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 480px) {
-  nav ul {
-    padding: 5px;
-    gap: 5px;
-  }
-
-  .welcome-text h1 {
-    font-size: 2.5em;
-  }
-
-  .services h2 {
-    font-size: 2em;
-  }
-
-  .service-item {
-    font-size: 0.8em;
-    padding: 5px 10px;
-  }
-}
-.card {
-  max-width: 300px;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid transparent;
-}
-
-.card a {
-  text-decoration: none;
-}
-
-.content {
-  padding: 1.1rem;
-}
-
-.image {
-  object-fit: cover;
-  width: 100%;
-  height: 150px;
-  background-color: rgb(239, 205, 255);
-}
-
-.title {
-  color: #111827;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-}
-
-.desc {
-  margin-top: 0.5rem;
-  color: #6b7280;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.action {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: #2563eb;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.action span {
-  transition: 0.3s ease;
-}
-
-.action:hover span {
-  transform: translateX(4px);
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .container {
   max-height: 90vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;     /* Center items vertically */
   gap: 20px;
   background-color: white;
 }
@@ -574,6 +225,7 @@ button {
 .heading {
   font-size: 2.4rem;
   color: black;
+  padding-top: 30%;
   text-align: center;
   font-weight: 500;
 }
@@ -583,33 +235,32 @@ button {
   display: grid;
   gap: 17px;
   width: 80vw;
-  grid-template-columns: repeat(9, 1fr); /* 9 columns */
-  grid-template-rows: repeat(6, 14vh); /* 6 rows */
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(6, 14vh);
 }
 
 .box {
   background-size: cover;
-  background-position: top; /* Initial position of the image */
+  background-position: top;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
-  transition: background-position 0.5s ease; /* Smooth transition for background position */
+  transition: background-position 0.5s ease;
   cursor: pointer;
-  border-radius: 15px; /* Rounded corners */
-  padding: 10px; /* Padding for better text visibility */
-  text-align: center; /* Center text */
-  font-weight: 700; /* Increase text weight */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for contrast */
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .box:hover {
-  background-position: bottom; /* Move the image down on hover */
+  background-position: bottom;
 }
-
-
 
 /* Adjust the box spans */
 .row-2 {
@@ -634,26 +285,26 @@ button {
 .col-4 {
   grid-column: span 4;
 }
-.col-4 {
+.col-5 {
   grid-column: span 5;
 }
 
 /* Media query for width <= 1024px */
 @media screen and (max-width: 1024px) {
   .container {
-      flex-direction: column;
-      padding-block: 20px;
+    flex-direction: column;
+    padding-block: 20px;
   }
   .gallery {
-      width: 100%;
-      gap: 0px;
-      padding-inline: 12px;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(7, 60px);
+    width: 100%;
+    gap: 0px;
+    padding-inline: 12px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 60px);
   }
   .box {
-      grid-row: span 1;
-      grid-column: span 1;
-      height: 50px;
+    grid-row: span 1;
+    grid-column: span 1;
+    height: 50px;
   }
 }
