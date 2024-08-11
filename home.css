@@ -23,7 +23,6 @@ header {
   align-items: center;
   z-index: 2; /* Ensure header is above video */
 }
-
 nav {
   display: flex;
   justify-content: center;
@@ -36,8 +35,6 @@ nav {
   opacity: 1;
   animation-delay: 0.5s;
 }
-
-
 nav ul {
   list-style-type: none;
   display: flex;
@@ -45,7 +42,6 @@ nav ul {
   padding: 0;
   margin: 0;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #000;
@@ -54,8 +50,6 @@ nav ul li a {
   padding: 10px 20px;
   transition: background-color 0.3s, color 0.3s;
 }
-
-
 nav ul li a:hover {
   background-color: #fb845d;
   color: #fff;
@@ -74,11 +68,9 @@ nav ul li a:hover {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-
 .call-us:hover {
   background-color: #e0240b;
 }
-
 .call-us-btn {
   background-color: #f95c3c;
   color: #fff;
@@ -88,11 +80,9 @@ nav ul li a:hover {
   width: 120px;
   cursor: pointer;
 }
-
 .call-us-btn:hover {
   background-color: #e0240b;
 }
-
 .call-us-btn2 {
   background-color: #3575aa;
   color: #fff;
@@ -102,10 +92,10 @@ nav ul li a:hover {
   width: 150px;
   cursor: pointer;
 }
-
 .call-us-btn2:hover {
   background-color: #95a1bb;
 }
+
 
 /* Ensure the video covers the entire section */
 .video-background {
@@ -116,6 +106,37 @@ nav ul li a:hover {
   height: 100%;
   overflow: hidden;
   z-index: -1; /* Ensure the video is behind other content */
+}
+
+/* For screens 768px or smaller (phones) */
+@media (max-width: 768px) {
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1rem;
+  }
+
+  .call-us-btn, .call-us-btn2 {
+    padding: 8px 16px;
+    margin: 5px;
+  }
+
+  /* Adjust video background for mobile */
+  #background-video {
+    height: auto;
+    width: 100%;
+  }
+
+  .video-background {
+    height: 50vh; /* Adjust to cover less of the screen */
+  }
+
+  .welcome-section {
+    height: auto;
+    padding: 20px;
+  }
 }
 
 video#background-video {
@@ -129,7 +150,7 @@ video#background-video {
   position: relative; /* Set positioning context for the video */
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ensure it covers the full viewport height */
+  height: 80vh; /* Ensure it covers the full viewport height */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -149,40 +170,9 @@ video#background-video {
   color: #fff; /* Ensure the text color contrasts with the video background */
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .welcome-text h1 {
-    font-size: 2.5em;
-    text-align: center;
-  }
 
-  .welcome-text p {
-    font-size: 1em;
-    text-align: center;
-  }
 
-  .robot-img img {
-    width: 300px;
-    margin-top: 20px;
-  }
-
-  .welcome-section {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .welcome-text h1 {
-    font-size: 2em;
-  }
-
-  .robot-img img {
-    width: 100%;
-    max-width: 250px;
-  }
-}
-
+/* ---------------clients------------- */
 .clients {
   text-align: center;
   padding: 40px 20px;
