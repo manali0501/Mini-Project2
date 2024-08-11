@@ -12,33 +12,35 @@ body {
 }
 
 header {
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   padding: 9px 20px;
   background-color: transparent; /* Ensure header is transparent for video visibility */
-  display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2; /* Ensure header is above video */
+  gap: 0px;
 }
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 60vw;
-  margin: 0 auto;
+  max-width: 70%;
+  margin: 1% auto;
   padding: 10px 30px;
   border-radius: 30px;
   background-color: #c4c8d4;
   opacity: 1;
   animation-delay: 0.5s;
+  position: relative;
 }
 nav ul {
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
@@ -53,6 +55,54 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #fb845d;
   color: #fff;
+}
+
+
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+
+  nav {
+    max-width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .call-us {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .call-us {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
 }
 
 /* ---------------------Call us button----------------------- */
@@ -72,25 +122,29 @@ nav ul li a:hover {
   background-color: #e0240b;
 }
 .call-us-btn {
-  background-color: #f95c3c;
+  background-color: #FB845D;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
-  width: 120px;
+  border-radius: 40px;
+  width: 150px;
+  height: 50px;
   cursor: pointer;
+  font-size: 18px;
 }
 .call-us-btn:hover {
   background-color: #e0240b;
 }
 .call-us-btn2 {
-  background-color: #3575aa;
-  color: #fff;
+  background-color: #E2E6F2;
+  color: black;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
-  width: 150px;
+  border-radius: 40px;
+  width: 170px;
+  height: 50px;
   cursor: pointer;
+  font-size: 18px;
 }
 .call-us-btn2:hover {
   background-color: #95a1bb;
@@ -162,12 +216,13 @@ video#background-video {
   font-size: 3.5em;
   color: #fff; /* Ensure the text color contrasts with the video background */
   line-height: 1.2;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .welcome-text p {
   font-size: 1.2em;
-  color: #fff; /* Ensure the text color contrasts with the video background */
+  color: #FB845D; /* Ensure the text color contrasts with the video background */
+  margin-bottom: 20px;
 }
 
 
@@ -298,3 +353,242 @@ video#background-video {
     height: 50px;
   }
 }
+
+
+@font-face {
+  font-family: 'CustomFont'; /* Name you want to give the font */
+  src: url('fonts/OutfitExtraLight.ttf') format('truetype'); /* Path to your .ttf file */
+  font-weight: normal; /* Set weight, e.g., normal or bold */
+  font-style: normal;  /* Set style, e.g., normal or italic */
+}
+
+.contact_page{
+  display: flex;
+  padding: 50px;
+  padding-left: 0%;
+  margin-left: 0%;
+  height: calc(70vh - 80px);
+}
+
+.left_text,.right_editext {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_text {
+  display: flex;
+  margin-left: 15%;
+  align-items: start;
+  flex-direction: column;
+  text-align: center;
+  justify-content: start;
+}
+
+.left_text h1{
+  margin: 1%;
+  font-size: 45px;
+}
+
+/* .contact_text{
+  flex-direction: column;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  
+} */
+.contact_text h2{
+  font-family: 'CustomFont';
+  color: #191919;
+  margin: 0%;
+  font-size: 40px;
+  font-weight: lighter;
+
+}
+.email_phoneNo{
+  text-align: start;
+  margin: 1%;
+
+}
+
+.input_box{
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px;
+  width: 70%;
+  border: 1px solid #999;
+  outline: none;
+  border: 1px solid;
+}
+
+.input_box2{
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  height: 150px; 
+  width: 70%;
+  border: 1px solid;
+  border-radius: 10px;
+
+  
+}
+
+.submit{
+  width: 70%;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  margin: 10px;
+  border: 1px solid #FF5757;
+  cursor: pointer;
+  color: #FF5757;
+  background-color: white;
+
+}
+.email_phoneNo ul li{
+  list-style: none;
+}
+/* li:not(:last-child){
+  margin-bottom: 15px;
+} */
+
+.email_phoneNo ul li:before{
+  content: "\2022";
+  color: red;
+  margin-right: 10px;
+  font-size: 40px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none; /* Remove default checkbox */
+  width: 30px;      /* Set size of the custom checkbox */
+  height: 30px;
+  border-radius: 50%; /* Make it a circle */
+  border: 2px solid #999; /* Border color */
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px; /* Align with label text */
+  margin-right: 10px;
+  background-color: white; /* Default background */
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: #FF5757; /* Background color when checked */
+  border-color: #FF5757;
+}
+
+.checkbox-container input[type="checkbox"]:checked:before {
+  content: '\2713'; /* Unicode for tick mark */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Color of the tick mark */
+  font-size: 18px; /* Tick mark size */
+}
+
+.checkbox-container label {
+  font-size: 16px; /* Adjust label font size */
+  line-height: 1.5; /* Spacing for label text */
+}
+
+
+.footer_page {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Overlapping Block */
+.overlapping-block {
+  font-size: 30px;
+  background-color: #FB845D;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2; /* Ensure this block stays above the footer */
+  margin: 0 auto -50px auto; /* Center the block and create overlap */
+  width: 90%; /* Add space on the left and right */
+  border-radius: 25px; /* Add border radius */
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #121825;
+  padding: 50px;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1; /* Ensure the footer is underneath the overlapping block */
+  width: 100%;
+  gap: 200px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+
+}
+
+.address{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.address p{
+  margin-bottom: 1%;
+}
+
+.address p:first-of-type {
+  margin-top: 30%;
+  font-weight: bold;
+}
+.name{
+  width: 100px;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 920px) {
+  .contact_page {
+    flex-direction: column; /* Stack the elements vertically */
+    height: auto; /* Let height adjust based on content */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .left_text, .right_editext {
+    margin-left: 0;
+    flex: none;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left_text {
+    margin-bottom: 20px;
+  }
+
+  .overlapping-block {
+    width: 100%; /* Make overlapping block full-width on smaller screens */
+  }
+}
+
